@@ -1,6 +1,5 @@
 package methods;
 
-import jdk.jfr.Description;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -25,17 +24,14 @@ public class BaseMethods extends BasePage{
                 .ignoring(NoSuchElementException.class);
     }
 
-    @Description("İlgili element tıklanabilir olana kadar bekler.")
     protected void waitElementToClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    @Description("Console'a mesaj yazdırılmasını sağlar.")
     protected void logMessage(String text) {
         System.out.println(text);
     }
 
-    @Description("İlgili elemente tıklanmasını,eğer tıklanamazsa uyarı çıkması sağlanır.")
     protected void clickElement(WebElement element) {
         try {
             element.click();
@@ -47,7 +43,6 @@ public class BaseMethods extends BasePage{
 
     }
 
-    @Description("İlgili elemente string ifade girilmesini sağlar.")
     protected void writeText(WebElement element, String text) {
         try {
             if (element.getText().equals("")) {
@@ -60,7 +55,6 @@ public class BaseMethods extends BasePage{
         }
     }
 
-    @Description("Sayfada belirtilen saniye kadar beklmesini sağlar.")
     protected void waitSeconds(int seconds) {
         try {
             logMessage(seconds + " saniye kadar bekleniyor.");
@@ -70,7 +64,6 @@ public class BaseMethods extends BasePage{
         }
     }
 
-    @Description("Sayfayı belirli bir element yüklenene kadar beklemesini sağlar.")
     protected void waitForPageLoad(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
