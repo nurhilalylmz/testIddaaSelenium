@@ -12,7 +12,7 @@ public class LoginMethodsTest extends BasePage {
     public void successLogin() {
         loginPage= new LoginMethods(driver);
         loginPage
-                .login("05349199918", "qwerty1")
+                .login("0", "qwerty1")
                 .closePopup()
                 .checkUserMainPage("https://test.iddaa.com/");
     }
